@@ -35,6 +35,10 @@ void BinaryRadixSort(vector<int>& A){
         for (int i = 0; i < A.size(); ++i) {
             D[i] = (A[i] >> k) & 1;
         }
+        vector<int> C(2, 0);
+        for (int i = 0; i < D.size(); ++i) {
+            ++C[D[i]];
+        }
     }
 }
 
