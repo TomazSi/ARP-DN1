@@ -30,7 +30,9 @@ void Izpis_Stevil(int* polje, unsigned int velikost) {
 void BinaryRadixSort(vector<int>& A){
     const int numBits=8;
     const int numIterations=numBits;
-    
+    for(int k=0;k<numIterations;k++){
+        
+    }
 }
 
 int main(int argc, const char* argv[]) {
