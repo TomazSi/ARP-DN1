@@ -31,7 +31,10 @@ void BinaryRadixSort(vector<int>& A){
     const int numBits=8;
     const int numIterations=numBits;
     for(int k=0;k<numIterations;k++){
-
+        vector<int> D(A.size());
+        for (int i = 0; i < A.size(); ++i) {
+            D[i] = (A[i] >> k) & 1;
+        }
     }
 }
 
