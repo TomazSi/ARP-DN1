@@ -27,6 +27,9 @@ void Izpis_Stevil(int* polje, unsigned int velikost) {
 	for (int i = 0; i<velikost; i++)
 		output << polje[i] << ' ';
 }
+void BinaryRadixSort(vector<int>& A){
+
+}
 
 int main(int argc, const char* argv[]) {
 	vector<int> A;
@@ -40,6 +43,7 @@ int main(int argc, const char* argv[]) {
         cout << "Error reading input file." << endl;
         return 0;
     }
+    BinaryRadixSort(A);
 	Izpis_Stevil(&A[0],A.size());
 
 	return 0;
