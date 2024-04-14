@@ -2,13 +2,14 @@ name: Deploy na DockerHub
 
 on:
   workflow_run:
-    workflows: ["Testiranje aplikacije"]
+    workflows: ["Build and Test"]
     types:
       - completed
 
 jobs:
   deploy:
     runs-on: self-hosted
+    needs: ${{ github.event.workflow_run.id }}
     steps:
       - name: Checkout repozitorija
         uses: actions/checkout@v2
