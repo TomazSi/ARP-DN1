@@ -6,8 +6,11 @@ on:
       - main
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
+  build-and-test:
+    runs-on: self-hosted
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
     steps:
       - name: Checkout repozitorija
         uses: actions/checkout@v2
