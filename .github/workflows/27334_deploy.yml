@@ -9,7 +9,7 @@ on:
 jobs:
   deploy:
     runs-on: self-hosted
-    needs: ${{ github.event.workflow_run.id }}
+    needs: ${{ github.run_id }}
     steps:
       - name: Checkout repozitorija
         uses: actions/checkout@v2
