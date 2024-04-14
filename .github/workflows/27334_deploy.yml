@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Prijava v DockerHub
-        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+        run: sudo echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
       - name: Gradnja Docker slike
         run: docker build -t tomazsi/ghactionsarp .
