@@ -13,13 +13,10 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Prijava v DockerHub
-        run: |
-          echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
-      - name: Gradnja Docker slike
-        run: |
-          docker build -t tomazsi/ghactionsarp .
+      - name: Izvrši skripto za gradnjo Docker slike
+        run: ./zapakiraj_27334.sh
 
-      - name: Potisnitev slike v DockerHub
-        run: |
-          docker push tomazsi/ghactionsarp
+      - name: Izvrši skripto za zagon vsebnika
+        run: ./zazeni_27334.sh
