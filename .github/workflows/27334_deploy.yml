@@ -1,14 +1,10 @@
 name: Deploy na DockerHub
 
-on:
-  push:
-    branches:
-      - main
+on: [push]
 
 jobs:
   deploy:
     runs-on: self-hosted
-    needs: build-and-test
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
