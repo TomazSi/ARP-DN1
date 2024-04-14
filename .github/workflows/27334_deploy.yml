@@ -2,7 +2,7 @@ name: Deploy na DockerHub
 
 on:
   workflow_run:
-    workflows: ["Testiranje aplikacije "]
+    workflows: ["Testiranje aplikacije"]
     types:
       - completed
 
@@ -18,7 +18,7 @@ jobs:
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
       - name: Gradnja Docker slike
-        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/ime_slike .
+        run: docker build -t tomazsi/ghactionsarp .
 
       - name: Potisnitev slike v DockerHub
-        run: docker push ${{ secrets.DOCKER_USERNAME }}/ime_slike
+        run: docker push tomazsi/ghactionsarp
