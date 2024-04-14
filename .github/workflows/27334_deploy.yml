@@ -2,7 +2,7 @@ name: Deploy na DockerHub
 
 on:
   workflow_run:
-    workflows: ["Build and Test"]
+    workflows: ["Testiranje aplikacije "]
     types:
       - completed
 
