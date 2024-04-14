@@ -9,10 +9,6 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Run Tests
-        run: |
-          # Add your test commands here
-          echo "Running tests..."
 
       - name: Build and Push Docker Image
         run: |
