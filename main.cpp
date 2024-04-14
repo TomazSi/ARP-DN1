@@ -20,6 +20,7 @@ bool Branje_Stevil(vector<int> &vec, const char s[]) {
 	input.close();
 	return true;
 }
+
 void Izpis_Stevil(int* polje, unsigned int velikost) {
 	ofstream output("out.txt");
 
